@@ -1,5 +1,6 @@
 # El-secreto-astronomico-de-Guadalupe-Monserrate
-by Usuy D leon, Jaime Forero PhD
+  >by Usuy D leon, Jaime Forero PhD
+
 La existencia del Observatorio Solar de Bacatá, vestigio de la astronomía del pueblo Muisca, ha sido  propuesta en la ubicación de la actual Catedral Primada de Bogotá (Bonilla, 2011). Este observatorio se fundamenta en las alineaciones solares observables durante los solsticios y equinoccios, cuando el Sol emerge sobre las montañas circundantes. En la actualidad, este sitio es un punto de confluencia cultural y turística debido a su resignificación arqueoastronómica.
 
 La fundación de Bogotá en 1538 no eliminó las prácticas astronómico-religiosas del pueblo Muisca, quienes continuaron venerando sitios específicos en las montañas y utilizando caminos hacia lugares sagrados (Gamboa, 2007). Previo a la construcción de ermitas cristianas, los frailes europeos habían señalado las cumbres con cruces como marcadores de los antiguos "santuarios indígenas" (Rodríguez, 1997). La posterior construcción de iglesias en estos sitios sagrados culminó el proceso de sincretismo entre la astronomía ancestral muisca y la religión católica.
