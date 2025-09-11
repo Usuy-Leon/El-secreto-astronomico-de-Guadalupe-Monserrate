@@ -14,3 +14,11 @@ El presente trabajo utiliza la ubicación actual de las iglesias de Guadalupe y 
 
 Nuestros cálculos revelan que esta área no corresponde a la Plaza de Bolívar, como se acepta actualmente, sino que se localiza en otro sector del centro histórico bogotano: la zona del Chorro de Quevedo en La Candelaria. Adicionalmente, evaluamos la proximidad angular de las seis principales iglesias históricas del centro de Bogotá respecto al ángulo ideal de observación. Estos hallazgos sugieren una nueva ubicación para el Observatorio Solar de Bacatá, diferente a la  actualmente aceptada, con implicaciones para el entendimiento del sincretismo cultural y el desarrollo del astroturismo en la capital colombiana.
 
+## Bibliografía
+
+- Bonilla Romero, Julio. (2011) Aproximaciones al observatorio solar de Bacatá-Bogotá-Colombia. Universidad Distrital Francisco José de Caldas.
+
+- Gamboa Mendoza, J. (2007). Los muiscas: sociedad y cultura prehispánica. Instituto Colombiano de Antropología e Historia.
+
+- Rodríguez Freile, Juan. (1997) El Carnero (1636). Bogotá: Instituto Caro y Cuervo.
+
