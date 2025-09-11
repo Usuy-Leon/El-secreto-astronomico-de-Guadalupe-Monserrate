@@ -1,3 +1,12 @@
+
+
+
+
+"""
+Este codigo calcula triangulos 3D de la proyeccion solar del sol a puntos historicos derivados del sincretismo cultural
+Musica en La Candelaria, Bogotá, Colombia.
+"""
+
 import math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -44,23 +53,23 @@ def geodetic_to_ecef(lat_deg, lon_deg, alt_m=0):
     z = r * math.sin(lat)
     return np.array([x, y, z])
 
-# Create 3D plot
+# Crea proyeccion 3D
 fig = plt.figure(figsize=(12, 10))
 ax = fig.add_subplot(111, projection='3d')
 colors = ['#8B4000', '#556B2F', '#D2B48C', '#A0522D', '#6B8E23']
 
 for i, (name, points) in enumerate(triangles.items()):
-    # Convert GPS points to ECEF
+    # Convertir GPS points a cordenadas circulares
     ecef_points = np.array([geodetic_to_ecef(*p) for p in points])
     
-    # Plot vertices
+    #vertices
     ax.scatter(ecef_points[:, 0], ecef_points[:, 1], ecef_points[:, 2], label=name, color=colors[i % len(colors)], s=50)
     
-    # Draw triangle edges
+    #triangulos vertices
     tri_edges = np.vstack([ecef_points, ecef_points[0]])  # Close the triangle loop
     ax.plot(tri_edges[:, 0], tri_edges[:, 1], tri_edges[:, 2], color=colors[i % len(colors)])
     
-    # Draw filled triangle with some transparency
+    # trasparencias para multiples triangulos
     verts = [list(ecef_points)]
     ax.add_collection3d(Poly3DCollection(verts, alpha=0.3, facecolor=colors[i % len(colors)]))
 
