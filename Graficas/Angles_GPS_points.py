@@ -1,11 +1,8 @@
 
 
 """
-This script calculates the angles of triangles formed by GPS coordinates of
-historic landmarks in La Candelaria, Bogotá, Colombia.
-
-The script generates a table showing the three angles for each triangle formed
-by different combinations of landmark coordinates
+Este codigo calcula triangulos y sus angulos de la proyeccion solar del sol a puntos historicos
+de La Candelaria, Bogotá, Colombia.
 """
 
 import math
@@ -53,7 +50,7 @@ def geodetic_to_ecef(lat_deg, lon_deg, alt_m=0):
     """
     lat = math.radians(lat_deg)
     lon = math.radians(lon_deg)
-    alt_km = alt_m / 1000.0  # Convertir metros a kilómetros
+    alt_km = alt_m / 1000.0  
     r = EARTH_RADIUS_KM + alt_km
     x = r * math.cos(lat) * math.cos(lon)
     y = r * math.cos(lat) * math.sin(lon)
@@ -67,12 +64,12 @@ def calculate_angle_3d(A, B, C):
     BA = A - B
     BC = C - B
     cos_angle = np.dot(BA, BC) / (np.linalg.norm(BA) * np.linalg.norm(BC))
-    cos_angle = np.clip(cos_angle, -1.0, 1.0)  # Corregir errores numéricos
+    cos_angle = np.clip(cos_angle, -1.0, 1.0)  
     angle_rad = math.acos(cos_angle)
     return math.degrees(angle_rad)
 
 for name, points in triangles.items():
-    # Convertir cada punto a coordenadas 3D ECEF
+    # Convertir cada punto a coordenadas circulares 3D
     A = geodetic_to_ecef(*points[0])
     B = geodetic_to_ecef(*points[1])
     C = geodetic_to_ecef(*points[2])
@@ -89,7 +86,6 @@ for name, points in triangles.items():
 print("| Triángulo                | Ángulo 1 (A) | Ángulo 2 (B) | Ángulo 3 (C) |")
 print("|--------------------------|--------------|--------------|--------------|")
 
-# --- Graficar triángulos y ángulos ---
 
 # Paleta de colores para graficar
 terra_colors = [
