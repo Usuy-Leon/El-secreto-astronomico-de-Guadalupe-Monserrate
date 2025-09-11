@@ -1,3 +1,13 @@
+
+ """
+    Este Codigo convierte un aarchivo GEOtiff a STL para poder ser Impreso 3D, tambien adiciona una 
+    base y relleno para impresion. Adicional mente puede aumentar la resolucion del GEOtiff original
+
+    Parametros:
+    - oversample_factor: factor de incremento de resolution ( 2x, 4x)
+    - interpolation: 'nearest', 'linear', 'cubic', 'quintic' o integer 0-5
+    """
+
 import numpy as np
 import rasterio
 from rasterio.warp import calculate_default_transform, reproject, Resampling
@@ -35,19 +45,7 @@ def reproject_geotiff_to_utm(input_geotiff_path, output_geotiff_path, target_eps
     print(f"GeoTIFF reprojected and saved to: {output_geotiff_path}")
 
 def oversample_dem(dem, transform, oversample_factor, method='cubic'):
-    """
-    Oversample the DEM data to increase resolution using interpolation.
 
-    Parameters:
-    - dem: numpy array of elevation data
-    - transform: rasterio transform object
-    - oversample_factor: factor by which to increase resolution (e.g., 2 for 2x resolution)
-    - method: interpolation method ('linear', 'cubic', 'quintic', or integer 0-5)
-
-    Returns:
-    - oversampled_dem: higher resolution DEM
-    - new_transform: updated transform for the new resolution
-    """
     print(f"Original DEM shape: {dem.shape}")
 
     # Map method names to scipy order values
@@ -121,13 +119,6 @@ def geotiff_to_stl(
     oversample_factor=1,
     interpolation_method='cubic'
 ):
-    """
-    Convert GeoTIFF to STL with optional oversampling for higher resolution.
-
-    Parameters:
-    - oversample_factor: factor by which to increase resolution (e.g., 2 for 2x, 4 for 4x)
-    - interpolation_method: 'nearest', 'linear', 'cubic', 'quintic' or integer 0-5
-    """
 
     with rasterio.open(geotiff_path) as src:
         dem = src.read(1)
@@ -264,13 +255,13 @@ def geotiff_to_stl(
     print(f"  - File size: {terrain_mesh.data.nbytes / (1024*1024):.2f} MB")
 
 if __name__ == "__main__":
-    raw_geotiff = "/home/usuaryo/Documents/otros/Astronomia/rasters_SRTMGL3/output_SRTMGL3.tif"
-    reprojected_geotiff = "/home/usuaryo/Documents/otros/Astronomia/rasters_SRTMGL3/output_SRTMGL3_UTM.tif"
+    raw_geotiff = "/home/output_SRTMGL3.tif"
+    reprojected_geotiff = "/home/output_SRTMGL3_UTM.tif"
 
     # Different output files for different resolutions
-    output_stl_1x = "/home/usuaryo/Documents/otros/Astronomia/rasters_SRTMGL3/output_SRTMGL3_solid_1x.stl"
-    output_stl_2x = "/home/usuaryo/Documents/otros/Astronomia/rasters_SRTMGL3/output_SRTMGL3_solid_2x.stl"
-    output_stl_4x = "/home/usuaryo/Documents/otros/Astronomia/rasters_SRTMGL3/output_SRTMGL3_solid_4x.stl"
+    output_stl_1x = "/home/output_SRTMGL3_solid_1x.stl"
+    output_stl_2x = "/home/rasters_SRTMGL3/output_SRTMGL3_solid_2x.stl"
+    output_stl_4x = "/home/output_SRTMGL3_solid_4x.stl"
 
     utm_epsg_code = 32618
 
@@ -363,11 +354,10 @@ if __name__ == "__main__":
     )
 
     print("\n" + "="*60)
-    print("PROCESSING COMPLETE!")
+    print("PROCESO COMPLETO!")
     print("="*60)
     print("Generated files:")
     print(f"  - 1x resolution: {output_stl_1x}")
     print(f"  - 2x resolution: {output_stl_2x}")
     print(f"  - 4x resolution: {output_stl_4x}")
-    print("\nNote: Higher resolution files will be larger and take longer to print.")
-    print("Choose the appropriate resolution based on your 3D printer capabilities.")
+
