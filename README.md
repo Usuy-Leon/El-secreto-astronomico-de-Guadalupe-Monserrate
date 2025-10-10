@@ -8,7 +8,7 @@ La fundación de Bogotá en 1538 no eliminó las prácticas astronómico-religio
 
 
 ![IMG-20241221-WA0009](https://github.com/user-attachments/assets/d587faa0-c864-4325-8dc4-2dae9bf81240)
-Plaza de Bolivar, amanecer durante el solticio de invierno, Autoria propia.
+Plaza de Bolivar, Amanecer durante el solticio de invierno, Autoria propia.
 
 
 El presente trabajo utiliza la ubicación actual de las iglesias de Guadalupe y Monserrate como puntos de geo-referencia para calcular la posición ideal de observación solar durante los equinoccios y solsticios. Mediante el análisis de los ángulos teóricos del azimut solar para estas fechas astronómicamente significativas, determinamos el área óptima para las observaciones solares.
