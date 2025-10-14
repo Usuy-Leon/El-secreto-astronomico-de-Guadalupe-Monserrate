@@ -34,13 +34,7 @@ def reproject_geotiff_to_utm(input_geotiff_path, output_geotiff_path, target_eps
     print(f"GeoTIFF reprojected and saved to: {output_geotiff_path}")
 
 def raise_elevation_at_points(dem, transform, points, raise_height):
-    """
-    Raises the elevation in the DEM at specified GPS points (lon, lat).
-    dem: numpy array of DEM elevations
-    transform: affine transform of raster (GeoTIFF)
-    points: list of (lon, lat) tuples in WGS84
-    raise_height: height increment in DEM units (before scaling)
-    """
+
     for lon, lat in points:
         # Convert coordinates to raster indices
         col, row = ~transform * (lon, lat)
@@ -177,9 +171,9 @@ def geotiff_to_stl(
     print(f"STL file saved at: {stl_path}")
 
 if __name__ == "__main__":
-    raw_geotiff = "/home/usuaryo/Documents/otros/Astronomia/rasters_SRTMGL3/output_SRTMGL3.tif"
-    reprojected_geotiff = "/home/usuaryo/Documents/otros/Astronomia/rasters_SRTMGL3/output_SRTMGL3_UTM.tif"
-    output_stl = "/home/usuaryo/Documents/otros/Astronomia/rasters_SRTMGL3/output_SRTMGL3_solid.stl"
+    raw_geotiff = "/Path/YourFiles/rasters_SRTMGL3/output.tif"
+    reprojected_geotiff = "//Path/YourFiles/rasters_SRTMGL3/output.tif"
+    output_stl = "/Path/YourFiles/output_solid.stl"
 
     utm_epsg_code = 32618
 
