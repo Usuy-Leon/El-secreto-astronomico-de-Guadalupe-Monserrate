@@ -200,11 +200,6 @@ if __name__ == "__main__":
     print(f"Calculated base height (DEM units): {calculated_base_height}")
 
 
-    # Raise height: bump height in DEM units for labels (~5 mm bump)
-    desired_bump_mm = 100.0
-    raise_height_dem_units = desired_bump_mm / calculated_scale_z
-    print(f"Calculated raise height (DEM units): {raise_height_dem_units}")
-
     # Step 3: Generate STL
     geotiff_to_stl(
         reprojected_geotiff,
