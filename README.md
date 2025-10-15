@@ -5,7 +5,7 @@
   
 # El-secreto-astronomico-de-Guadalupe-Monserrate
   >by Usuy D leon, Jaime Forero PhD
-- [Unete a Nuestra busqueda](https://www.instagram.com/observatorio_solar_de_bacata/)
+ [Unete a Nuestra busqueda](https://www.instagram.com/observatorio_solar_de_bacata/)
 
 </div>
 
